@@ -6,11 +6,11 @@
       @submit.prevent.stop="loginHandler"
       class="form col-md-4 mx-auto"
     >
-      <div class="form-group">
+      <div class="form-group my-4">
         <label for="username" class="form-label">Username</label>
         <input type="text" v-model="username" class="form-control" />
       </div>
-      <div class="form-group">
+      <div class="form-group my-4">
         <label for="password" class="form-label">Password</label>
         <input type="password" v-model="password" class="form-control" />
       </div>
