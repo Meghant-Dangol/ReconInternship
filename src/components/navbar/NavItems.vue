@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  props: ["navName"],
+  props: ["navName", "mode"],
   data() {
     return {};
   },
