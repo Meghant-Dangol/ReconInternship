@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h2>Transactions</h2>
-    <table>
+    <table v-if="transactionDate !== null ? true : false">
       <tr>
         <th>Date</th>
       </tr>
@@ -12,6 +12,7 @@
         >
       </tr>
     </table>
+    <h3 v-else>No Transactions</h3>
   </div>
 </template>
 

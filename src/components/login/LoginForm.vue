@@ -32,7 +32,7 @@ export default {
     loginHandler() {
       localStorage.username = this.username;
       this.$emit("loggedIn");
-      this.$router.push("/dashboard");
+      this.$router.push("/dashboardview");
     },
   },
 };
