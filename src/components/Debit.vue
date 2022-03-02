@@ -34,6 +34,7 @@ export default {
         amount: this.amount,
         date: this.date,
         remarks: this.remarks,
+        type: "debit",
       };
 
       this.transactions.push(transaction);

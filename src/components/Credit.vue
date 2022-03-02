@@ -31,6 +31,7 @@ export default {
         amount: this.amount,
         date: this.date,
         remarks: this.remarks,
+        type: "credit",
       };
 
       this.transactions.push(transaction);

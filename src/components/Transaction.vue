@@ -8,7 +8,9 @@
       </thead>
       <tbody>
         <tr v-for="transaction in transactions" :key="transaction">
-          <td>{{ transaction.amount }}</td>
+          <td :class="showAmountClass(transaction.type)">
+            {{ transaction.amount }}
+          </td>
           <td>{{ transaction.remarks }}</td>
         </tr>
       </tbody>
@@ -23,7 +25,15 @@ export default {
       transactions: [],
     };
   },
-
+  methods: {
+    showAmountClass(type) {
+      let className = "text-light py-2 ";
+      if (type === "credit") {
+        return className + "bg-success";
+      }
+      return className + "bg-danger";
+    },
+  },
   mounted() {
     this.transactions =
       localStorage.transactions === undefined
