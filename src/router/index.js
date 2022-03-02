@@ -3,6 +3,8 @@ import LoginForm from "../components/login/LoginForm.vue";
 import Dashboard from "../components/Dashboard.vue";
 import Credit from "../components/Credit.vue";
 import Debit from "../components/Debit.vue";
+import Transactions from "../components/Transactions.vue";
+import Transaction from "../components/Transaction.vue";
 const routes = [
   {
     path: "/",
@@ -25,8 +27,13 @@ const routes = [
     name: "Debit",
   },
   {
-    path: "/transaction",
-    component: Dashboard,
+    path: "/transactions",
+    component: Transactions,
+    name: "Transactions",
+  },
+  {
+    path: "/transaction/:date",
+    component: Transaction,
     name: "Transaction",
   },
 ];

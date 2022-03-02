@@ -1,3 +1,3 @@
-const navItemData = ["Credit", "Debit", "Transaction"];
+const navItemData = ["Credit", "Debit", "Transactions"];
 
 export default navItemData;
