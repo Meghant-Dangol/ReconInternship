@@ -32,34 +32,27 @@ export default {
   },
   methods: {
     formSubmitHandler() {
-      if (this.$route.name === "Credit") {
-        let transaction = {
-          date: this.date,
-          amount: this.amount,
-          remarks: this.remarks,
-        };
-        this.transactions.push(transaction);
-        localStorage.totalBalance =
-          Number(localStorage.totalBalance) + Number(this.amount);
-        localStorage.transaction = JSON.stringify(this.transactions);
-
-        this.$router.push("Transaction");
-      } else {
-        let transaction = {
-          date: this.date,
-          amount: this.amount,
-          remarks: this.remarks,
-        };
-        this.transactions.push(transaction);
-        localStorage.totalBalance =
-          Number(localStorage.totalBalance) - Number(this.amount);
-        localStorage.transaction = JSON.stringify(this.transactions);
-        this.$router.push("Transaction");
+      if (localStorage.totalBalance === undefined) {
+        localStorage.totalBalance = 0;
       }
+      let transaction = {
+        date: this.date,
+        amount: this.amount,
+        remarks: this.remarks,
+      };
+      this.transactions.push(transaction);
+      localStorage.totalBalance =
+        Number(localStorage.totalBalance) + Number(this.amount);
+      localStorage.transaction = JSON.stringify(this.transactions);
+      this.$router.push("Transaction");
     },
   },
-  updated() {
+  mounted() {
     this.mode = this.$route.name;
+    this.transactions =
+      localStorage.transaction === undefined
+        ? []
+        : JSON.parse(localStorage.transaction);
   },
 };
 </script>

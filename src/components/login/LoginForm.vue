@@ -30,7 +30,6 @@ export default {
 
   methods: {
     loginHandler() {
-      console.log(this.username, this.password);
       localStorage.username = this.username;
       this.$emit("loggedIn");
       this.$router.push("/dashboard");

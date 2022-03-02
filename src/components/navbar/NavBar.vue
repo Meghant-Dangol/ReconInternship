@@ -39,15 +39,21 @@ export default {
   data() {
     return {
       navItems: navItemData,
-      username: localStorage.getItem("username"),
+      username: "",
     };
   },
   methods: {
     logoutHandler() {
-      localStorage.clear;
+      localStorage.clear();
       this.username = "";
       this.$router.push("/");
     },
+  },
+  mounted() {
+    this.username = localStorage.getItem("username");
+  },
+  updated() {
+    this.username = localStorage.getItem("username");
   },
 };
 </script>

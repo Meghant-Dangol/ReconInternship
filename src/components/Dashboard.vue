@@ -15,7 +15,8 @@ export default {
   data() {
     return {
       username: localStorage.username,
-      totalBalance: localStorage.totalBalance,
+      totalBalance:
+        localStorage.totalBalance === undefined ? 0 : localStorage.totalBalance,
     };
   },
   methods: {
