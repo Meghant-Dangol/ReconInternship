@@ -1,20 +1,23 @@
 <template>
-  <Navbar />
   <div class="container">
-    <router-view></router-view>
+    <h2>Dashboard {{ username }}</h2>
+    <table class="col-md-2">
+      <tr>
+        <td class="px-2">Total Balance</td>
+        <td class="px-2">{{ totalBalance }}</td>
+      </tr>
+    </table>
   </div>
 </template>
 
 <script>
-import Navbar from "../components/navbar/NavBar.vue";
 export default {
-  components: { Navbar },
-
-  methods: {
-    logoutHandler() {
-      localStorage.clear;
-      this.$router.push("/");
-    },
+  data() {
+    return {
+      username: localStorage.username,
+      totalBalance:
+        localStorage.totalBalance === undefined ? 0 : localStorage.totalBalance,
+    };
   },
 };
 </script>

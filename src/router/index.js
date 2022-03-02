@@ -16,33 +16,26 @@ const routes = [
     component: Dashboard,
     name: "Dashboard",
     path: "/dashboard",
-    children: [
-      {
-        path: "/dashboardview",
-        name: "Dashboard",
-        component: DashboardView,
-      },
-      {
-        path: "/credit",
-        component: Credit,
-        name: "Credit",
-      },
-      {
-        path: "/debit",
-        component: Debit,
-        name: "Debit",
-      },
-      {
-        path: "/transactions",
-        component: Transactions,
-        name: "Transactions",
-      },
-      {
-        path: "/transaction/:date",
-        component: Transaction,
-        name: "Transaction",
-      },
-    ],
+  },
+  {
+    path: "/credit",
+    component: Credit,
+    name: "Credit",
+  },
+  {
+    path: "/debit",
+    component: Debit,
+    name: "Debit",
+  },
+  {
+    path: "/transactions",
+    component: Transactions,
+    name: "Transactions",
+  },
+  {
+    path: "/transaction/:date",
+    component: Transaction,
+    name: "Transaction",
   },
 ];
 

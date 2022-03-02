@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" v-if="showNavbar">
     <div class="container">
       <a class="navbar-brand" href="#">Navbar</a>
       <button
@@ -45,15 +45,21 @@ export default {
   methods: {
     logoutHandler() {
       localStorage.clear();
-      this.username = "";
       this.$router.push("/");
     },
   },
   mounted() {
-    this.username = localStorage.getItem("username");
+    this.username = localStorage.username;
   },
   updated() {
-    this.username = localStorage.getItem("username");
+    this.username = localStorage.username;
+  },
+  computed: {
+    showNavbar() {
+      if (this.$route.path !== "/") {
+        return true;
+      }
+    },
   },
 };
 </script>

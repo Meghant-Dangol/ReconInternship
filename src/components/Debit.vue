@@ -52,7 +52,7 @@ export default {
       localStorage.totalBalance =
         Number(localStorage.totalBalance) - Number(this.amount);
 
-      this.$router.push("/dashboardview");
+      this.$router.push("/dashboard");
     },
   },
   mounted() {
