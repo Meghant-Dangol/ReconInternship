@@ -20,7 +20,7 @@ export default {
   data() {
     return {
       transactions: [],
-      transactionDate: [],
+      transactionDate: null,
     };
   },
   mounted() {
@@ -29,11 +29,13 @@ export default {
         ? []
         : JSON.parse(localStorage.transactions);
 
-    this.transactionDate = [
-      ...new Set(
-        JSON.parse(localStorage.transactions).map((item) => item.date)
-      ),
-    ];
+    if (localStorage.transactions !== undefined) {
+      this.transactionDate = [
+        ...new Set(
+          JSON.parse(localStorage.transactions).map((item) => item.date)
+        ),
+      ];
+    }
   },
 };
 </script>
