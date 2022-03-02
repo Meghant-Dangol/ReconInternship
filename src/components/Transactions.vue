@@ -31,13 +31,13 @@
 export default {
   data() {
     return {
-      transactions: [],
+      transactions: null,
     };
   },
   mounted() {
     this.transactions =
       localStorage.transactions === undefined
-        ? []
+        ? null
         : JSON.parse(localStorage.transactions);
   },
   methods: {

@@ -37,10 +37,6 @@ export default {
         type: "debit",
       };
 
-      this.transactions.push(transaction);
-
-      localStorage.transactions = JSON.stringify(this.transactions);
-
       if (localStorage.totalBalance === undefined) {
         localStorage.totalBalance = 0;
       }
@@ -49,6 +45,9 @@ export default {
         this.debitError = true;
         return;
       }
+      this.transactions.push(transaction);
+
+      localStorage.transactions = JSON.stringify(this.transactions);
 
       localStorage.totalBalance =
         Number(localStorage.totalBalance) - Number(this.amount);
