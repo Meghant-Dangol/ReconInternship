@@ -1,14 +1,15 @@
 <template>
   <div class="container">
-    <h2>Credit</h2>
-    <form @submit.prevent="creditHandler" class="col-md-4">
+    <h2>Debit</h2>
+    <form @submit.prevent="debitHandler" class="col-md-4">
       <FormInput v-model="amount" type="text" label="Amount" />
       <FormInput v-model="date" type="date" label="Date" />
       <div class="form-group my-3">
         <label>Remarks</label>
         <textarea v-model="remarks" class="form-control"> </textarea>
       </div>
-      <input type="submit" value="Credit" class="btn btn-success" />
+      <p class="text-danger" v-if="debitError">{{ debitErrorMessage }}</p>
+      <input type="submit" value="Debit" class="btn btn-success" />
     </form>
   </div>
 </template>
@@ -23,10 +24,12 @@ export default {
       date: "",
       remarks: "",
       transactions: [],
+      debitError: false,
+      debitErrorMessage: "",
     };
   },
   methods: {
-    creditHandler() {
+    debitHandler() {
       let transaction = {
         amount: this.amount,
         date: this.date,
@@ -40,9 +43,15 @@ export default {
       if (localStorage.totalBalance === undefined) {
         localStorage.totalBalance = 0;
       }
+      if (Number(this.amount) > Number(localStorage.totalBalance)) {
+        this.debitErrorMessage = "Not Enough Balance";
+        this.debitError = true;
+        return;
+      }
 
       localStorage.totalBalance =
-        Number(localStorage.totalBalance) + Number(this.amount);
+        Number(localStorage.totalBalance) - Number(this.amount);
+
       this.$router.push("/dashboard");
     },
   },

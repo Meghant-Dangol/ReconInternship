@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 import LoginForm from "../components/login/LoginForm.vue";
 import Dashboard from "../components/Dashboard.vue";
-import TransactionForm from "../components/TransactionForm.vue";
 import Credit from "../components/Credit.vue";
+import Debit from "../components/Debit.vue";
 const routes = [
   {
     path: "/",
@@ -21,7 +21,7 @@ const routes = [
   },
   {
     path: "/debit",
-    component: TransactionForm,
+    component: Debit,
     name: "Debit",
   },
   {
