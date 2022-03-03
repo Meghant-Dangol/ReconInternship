@@ -29,16 +29,16 @@
 
 <script>
 export default {
-  data() {
-    return {
-      transactions: null,
-    };
+  props: {
+    transactions: {
+      default:
+        localStorage.transactions === undefined
+          ? null
+          : JSON.parse(localStorage.transactions),
+    },
   },
-  mounted() {
-    this.transactions =
-      localStorage.transactions === undefined
-        ? null
-        : JSON.parse(localStorage.transactions);
+  data() {
+    return {};
   },
   methods: {
     showAmountClass(type) {
