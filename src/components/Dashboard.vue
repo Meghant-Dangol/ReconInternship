@@ -17,6 +17,7 @@
     </div>
     <TransactionForm :type="type" v-if="buttonClicked" @close="closeForm" />
     <div class="py-4">
+      <h3>Transactions</h3>
       <TransactionTable :transactions="transactions" />
     </div>
   </div>
