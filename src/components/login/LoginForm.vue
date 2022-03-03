@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <h2 class="text-center">Login Form</h2>
+  <div class="container py-4">
+    <h2 class="text-center">Login</h2>
     <form
       action=""
       @submit.prevent.stop="loginHandler"

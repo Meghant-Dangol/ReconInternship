@@ -17,16 +17,16 @@
     </div>
     <TransactionForm :type="type" v-if="buttonClicked" @close="closeForm" />
     <div class="py-4">
-      <Transactions :transactions="transactions" />
+      <TransactionTable :transactions="transactions" />
     </div>
   </div>
 </template>
 
 <script>
 import TransactionForm from "./TransactionForm.vue";
-import Transactions from "./Transactions.vue";
+import TransactionTable from "./TransactionTable.vue";
 export default {
-  components: { TransactionForm, Transactions },
+  components: { TransactionForm, TransactionTable },
   data() {
     return {
       username: localStorage.username,

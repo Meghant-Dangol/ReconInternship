@@ -5,7 +5,6 @@ import Credit from "../components/Credit.vue";
 import Debit from "../components/Debit.vue";
 import Transactions from "../components/Transactions.vue";
 import Transaction from "../components/Transaction.vue";
-import DashboardView from "../components/DashboardView.vue";
 const routes = [
   {
     path: "/",

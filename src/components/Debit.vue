@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container py-4">
     <h2>Debit</h2>
     <form @submit.prevent="debitHandler" class="col-md-4">
       <FormInput v-model="amount" type="text" label="Amount" />
