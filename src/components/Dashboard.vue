@@ -9,9 +9,7 @@
     </table>
     <div class="col-md-4 row">
       <div class="col-md-6">
-        <button class="btn btn-primary" @click="creditClicked">
-          Credit Amount
-        </button>
+        <button class="btn btn-primary" @click="creditClicked">Credit</button>
       </div>
       <div class="col-md-6">
         <button class="btn btn-primary" @click="debitClicked">Debit</button>
